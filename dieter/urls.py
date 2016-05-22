@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from meals import views as mv
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^debug_view/$', mv.debug_view),
 ]

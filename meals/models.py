@@ -13,6 +13,7 @@ MEASUREMENTS = (
     ('kg', 'kilogram'),
     ('oz', 'ounce'),
     ('pinch', 'pinch'),
+    ('pieces', 'pieces'),
 )
 
 
@@ -52,7 +53,7 @@ class RecipeIngredient(models.Model):
         unique_together = ['recipe', 'ingredient', 'preparation']
 
     def __str__(self):
-        return '{}{} {}, {}'.format(
+        return '{:.2f} {} {}, {}'.format(
             self.quantity,
             self.measurement,
             self.ingredient,

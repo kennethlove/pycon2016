@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>DEBUG</title>
+    </head>
+    <body>
+        <ul>
+            {% for recipe in recipes %}
+                <li>
+                    <h3>{{ recipe.name }}</h3>
+                    <p>{{ recipe.description }}</p>
+                    <h4>Prep time: {{ recipe.prep_time }} minutes</h4>
+                    <h4>Cook time: {{ recipe.cook_time }} minutes</h4>
+                    <hr>
+                    <ul>
+                        {% for ingredient in recipe.ingredients.all %}
+                            <li>{{ ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
